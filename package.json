@@ -2,9 +2,10 @@
   "name": "note-taker",
   "version": "1.0.0",
   "description": "",
-  "main": "./public/server.js",
+  "main": "server.js",
   "engines" : { "node" : "14.8.0" },
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
