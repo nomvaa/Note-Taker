@@ -1,20 +1,17 @@
 const app = require("express")();
 const path = require("path")
-const noteRoutes = require("./public/assets/js/notesRouter")
-const webRoutes = require("./public/assets/js/router")
+const apiRoutes = require("./public/assets/js/apiRoute")
+const htmlRoutes = require("./public/assets/js/htmlRoute")
 
+const app = express ();
 const PORT = process.env.PORT || 5000
 
-// app.get("/notes", function(req, res){
-//     res.sendFile(path.join(__dirname, "public", "notes.html"));
-// })
 
-// app.get("*", function(req, res){
-//     res.sendFile(path.join(__dirname, "public", "index.html"));
-// })
-
-app.use('/api/notes', noteRoutes);
-app.use('/', webRoutes);
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(express.statis("public"));
+app.use('/api/notes', apiRoutes);
+app.use('/', htmlRoutes);
 
 app.listen(PORT, function() {
     console.log(`hosting on ${PORT}`)
