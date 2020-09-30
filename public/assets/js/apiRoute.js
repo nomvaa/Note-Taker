@@ -1,5 +1,5 @@
 var router =require("express").Router();
-var notes = require("./notes.js");
+var notes = require("./notes");
 var fs = require("fs");
 
 //API GET Request
