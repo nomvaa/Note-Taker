@@ -1,5 +1,5 @@
 var router =require("express").Router();
-var notes = require("./notes");
+var notes = require("./notes.js");
 
 router.get("/", function(req, res){
     notes.getNotes()
